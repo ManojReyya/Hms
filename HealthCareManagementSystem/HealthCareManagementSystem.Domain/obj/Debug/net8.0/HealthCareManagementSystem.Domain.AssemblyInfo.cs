@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthCareManagementSystem.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e1105080e9755bd4214df701cd669a0d196c24d")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e306922a4b1acf59d6ac8526064d3cbf5810a74")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("HealthCareManagementSystem.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthCareManagementSystem.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

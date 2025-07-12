@@ -7,7 +7,7 @@ using HealthCareManagementSystem.Domain.Enums;
 
 namespace HealthCareManagementSystem.Infrastructure
 {
-    internal class HealthCareManagementSystemDbContext : DbContext
+    public class HealthCareManagementSystemDbContext : DbContext
     {
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Patient> Patients { get; set; }
