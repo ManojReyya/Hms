@@ -9,3 +9,14 @@
 /Users/anushkjain/Desktop/Cognizant/technical-training-.dotnet-angular/Project Health Management System/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Domain/obj/Debug/net8.0/refint/HealthCareManagementSystem.Domain.dll
 /Users/anushkjain/Desktop/Cognizant/technical-training-.dotnet-angular/Project Health Management System/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Domain/obj/Debug/net8.0/HealthCareManagementSystem.Domain.pdb
 /Users/anushkjain/Desktop/Cognizant/technical-training-.dotnet-angular/Project Health Management System/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Domain/obj/Debug/net8.0/ref/HealthCareManagementSystem.Domain.dll
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\bin\Debug\net8.0\HealthCareManagementSystem.Domain.deps.json
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\bin\Debug\net8.0\HealthCareManagementSystem.Domain.dll
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\bin\Debug\net8.0\HealthCareManagementSystem.Domain.pdb
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\obj\Debug\net8.0\HealthCareManagementSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\obj\Debug\net8.0\HealthCareManagementSystem.Domain.AssemblyInfoInputs.cache
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\obj\Debug\net8.0\HealthCareManagementSystem.Domain.AssemblyInfo.cs
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\obj\Debug\net8.0\HealthCareManagementSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\obj\Debug\net8.0\HealthCareManagementSystem.Domain.dll
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\obj\Debug\net8.0\refint\HealthCareManagementSystem.Domain.dll
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\obj\Debug\net8.0\HealthCareManagementSystem.Domain.pdb
+C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Domain\obj\Debug\net8.0\ref\HealthCareManagementSystem.Domain.dll
