@@ -1,0 +1,19 @@
+# Ignore build outputs
+**/bin/
+**/obj/
+
+# Ignore migrations
+**/Migrations/
+
+# Ignore Rider/JetBrains/IDEA files
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore local secrets (if any)
+secrets.json
