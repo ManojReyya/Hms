@@ -15,7 +15,7 @@ namespace HealthCareManagementSystem.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=HospitalDB;User Id=sa;Password=Root#1234;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Data Source=LAPTOP-8JVDCEN3\\SQLEXPRESS;Initial Catalog=hms;Integrated Security=True;Trust Server Certificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -67,6 +67,7 @@ namespace HealthCareManagementSystem.Infrastructure
                 .HasForeignKey<MedicalRecord>(m => m.AppointmentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            // Static seed data
             modelBuilder.Entity<Doctor>().HasData(
                 new Doctor
                 {
@@ -104,8 +105,23 @@ namespace HealthCareManagementSystem.Infrastructure
                     UserId = "admin001",
                     Password = "admin@123",
                     Role = UserRole.Admin,
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = new DateTime(2024, 1, 1, 10, 0, 0)
+                },
+                new User
+                {
+                    UserId = "D001", // This is required for Doctor FK
+                    Password = "doctor@123",
+                    Role = UserRole.Doctor,
+                    CreatedAt = new DateTime(2024, 1, 1, 9, 0, 0)
+                },
+                new User
+                {
+                    UserId = "P001", // Needed to satisfy FK constraint
+                    Password = "patient@123",
+                    Role = UserRole.Patient,
+                    CreatedAt = new DateTime(2024, 1, 1, 8, 0, 0)
                 }
+
             );
 
             modelBuilder.Entity<Appointment>().HasData(
@@ -114,7 +130,7 @@ namespace HealthCareManagementSystem.Infrastructure
                     AppointmentId = 1,
                     DoctorId = "D001",
                     PatientId = "P001",
-                    AppointmentDate = DateTime.UtcNow.Date,
+                    AppointmentDate = new DateTime(2024, 1, 2),
                     SlotStart = new TimeSpan(10, 0, 0),
                     SlotEnd = new TimeSpan(10, 30, 0),
                     Status = AppointmentStatus.Scheduled
@@ -131,7 +147,7 @@ namespace HealthCareManagementSystem.Infrastructure
                     Diagnosis = "High Blood Pressure",
                     Prescription = "Amlodipine 5mg",
                     Notes = "Monitor BP daily",
-                    RecordDate = DateTime.UtcNow
+                    RecordDate = new DateTime(2024, 1, 3)
                 }
             );
         }
