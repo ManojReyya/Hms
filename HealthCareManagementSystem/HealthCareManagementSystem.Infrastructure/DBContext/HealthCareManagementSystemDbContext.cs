@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using HealthCareManagementSystem.Domain.Entities;
 using HealthCareManagementSystem.Domain.Enums;
 
+// using hashing algo ==> bcrypt
+
 namespace HealthCareManagementSystem.Infrastructure
 {
     internal class HealthCareManagementSystemDbContext : DbContext
@@ -15,7 +17,7 @@ namespace HealthCareManagementSystem.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=LAPTOP-8JVDCEN3\\SQLEXPRESS;Initial Catalog=hms;Integrated Security=True;Trust Server Certificate=True");
+            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=HospitalDB;User Id=sa;Password=1522858@Pati;Encrypt=false");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -103,21 +105,24 @@ namespace HealthCareManagementSystem.Infrastructure
                 new User
                 {
                     UserId = "admin001",
-                    Password = "admin@123",
+                    // actual password => admin@123
+                    Password = "$2a$12$bQx1RmyUCP.E8vNe6RFk5ugrLHHxQiee/yau.xfBKHXsn9huz7U6C",
                     Role = UserRole.Admin,
                     CreatedAt = new DateTime(2024, 1, 1, 10, 0, 0)
                 },
                 new User
                 {
                     UserId = "D001", // This is required for Doctor FK
-                    Password = "doctor@123",
+                    // actual password => doctor@123
+                    Password = "$2a$12$D/ys3Mu9NoInYBOtNoEDP.Dh4IfbUS1Ihuhj8GlvHZCwN2YpdkqwW",
                     Role = UserRole.Doctor,
                     CreatedAt = new DateTime(2024, 1, 1, 9, 0, 0)
                 },
                 new User
                 {
                     UserId = "P001", // Needed to satisfy FK constraint
-                    Password = "patient@123",
+                    // actual password => patient@123
+                    Password = "$2a$12$pIR23T7gg7saSRoh2g.y8eFAefYJSM2ueAp4NnHQmEGB/3BRwJYHW",
                     Role = UserRole.Patient,
                     CreatedAt = new DateTime(2024, 1, 1, 8, 0, 0)
                 }

@@ -4738,19 +4738,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/arnabsarkar/.nuget/packages/": {}
+    "/Users/anushkjain/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/arnabsarkar/Desktop/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Infrastructure/HealthCareManagementSystem.Infrastructure.csproj",
+      "projectUniqueName": "/Users/anushkjain/Desktop/Cognizant/technical-training-.dotnet-angular/Project Health Management System/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Infrastructure/HealthCareManagementSystem.Infrastructure.csproj",
       "projectName": "HealthCareManagementSystem.Infrastructure",
-      "projectPath": "/Users/arnabsarkar/Desktop/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Infrastructure/HealthCareManagementSystem.Infrastructure.csproj",
-      "packagesPath": "/Users/arnabsarkar/.nuget/packages/",
-      "outputPath": "/Users/arnabsarkar/Desktop/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Infrastructure/obj/",
+      "projectPath": "/Users/anushkjain/Desktop/Cognizant/technical-training-.dotnet-angular/Project Health Management System/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Infrastructure/HealthCareManagementSystem.Infrastructure.csproj",
+      "packagesPath": "/Users/anushkjain/.nuget/packages/",
+      "outputPath": "/Users/anushkjain/Desktop/Cognizant/technical-training-.dotnet-angular/Project Health Management System/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/arnabsarkar/.nuget/NuGet/NuGet.Config"
+        "/Users/anushkjain/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4762,8 +4762,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/arnabsarkar/Desktop/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Domain/HealthCareManagementSystem.Domain.csproj": {
-              "projectPath": "/Users/arnabsarkar/Desktop/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Domain/HealthCareManagementSystem.Domain.csproj"
+            "/Users/anushkjain/Desktop/Cognizant/technical-training-.dotnet-angular/Project Health Management System/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Domain/HealthCareManagementSystem.Domain.csproj": {
+              "projectPath": "/Users/anushkjain/Desktop/Cognizant/technical-training-.dotnet-angular/Project Health Management System/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Domain/HealthCareManagementSystem.Domain.csproj"
             }
           }
         }
@@ -4777,8 +4777,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -4812,22 +4811,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.17, 8.0.17]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.17, 8.0.17]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.410/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
