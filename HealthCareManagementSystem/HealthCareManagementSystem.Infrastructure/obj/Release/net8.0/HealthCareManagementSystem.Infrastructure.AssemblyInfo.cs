@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthCareManagementSystem.Infrastructure")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1446b7883b78b434136578000620dbe21daf1503")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+341c62ac6725528151ec17e0016e3c0fad351757")]
 [assembly: System.Reflection.AssemblyProductAttribute("HealthCareManagementSystem.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthCareManagementSystem.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

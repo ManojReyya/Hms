@@ -17,3 +17,5 @@
 
 # Ignore local secrets (if any)
 secrets.json
+
+**/.vs/
