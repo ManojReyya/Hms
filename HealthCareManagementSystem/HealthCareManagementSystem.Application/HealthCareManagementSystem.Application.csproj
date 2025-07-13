@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HealthCareManagementSystem.Domain\HealthCareManagementSystem.Domain.csproj" />
+      <ProjectReference Include="..\HealthCareManagementSystem.Infrastructure\HealthCareManagementSystem.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

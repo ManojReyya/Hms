@@ -1,18 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vY+ric4jiwg=",
+  "dgSpecHash": "OWotpeGJcFI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\noshy\\health-case-app_ttp1adda2510_team-1\\HealthCareManagementSystem\\HealthCareManagementSystem.Domain\\HealthCareManagementSystem.Domain.csproj",
+  "projectFilePath": "/Users/anushkjain/Desktop/Cognizant/technical-training-.dotnet-angular/Project Health Management System/health-case-app_ttp1adda2510_team-1/HealthCareManagementSystem/HealthCareManagementSystem.Domain/HealthCareManagementSystem.Domain.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "message": "Problem reading the cache file C:\\Users\\noshy\\health-case-app_ttp1adda2510_team-1\\HealthCareManagementSystem\\HealthCareManagementSystem.Domain\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
-      "projectPath": "C:\\Users\\noshy\\health-case-app_ttp1adda2510_team-1\\HealthCareManagementSystem\\HealthCareManagementSystem.Domain\\HealthCareManagementSystem.Domain.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\noshy\\health-case-app_ttp1adda2510_team-1\\HealthCareManagementSystem\\HealthCareManagementSystem.Domain\\HealthCareManagementSystem.Domain.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }
