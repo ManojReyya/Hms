@@ -18,6 +18,7 @@ namespace HealthCareManagementSystem.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=localhost,1433;Database=HospitalDB;User Id=sa;Password=1522858@Pati;Encrypt=false");
+            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -97,7 +98,7 @@ namespace HealthCareManagementSystem.Infrastructure
                     Gender = "Male",
                     Email = "amit.patel@example.com",
                     ContactNum = "9123456780",
-                    Age = new DateTime(1990, 4, 15)
+                    Age = 34
                 }
             );
 

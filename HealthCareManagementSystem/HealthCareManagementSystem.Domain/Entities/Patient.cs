@@ -22,8 +22,8 @@ public class Patient
     [Required, StringLength(13)]
     public string ContactNum { get; set; } = null!;
 
-    [DataType(DataType.Date)]
-    public DateTime Age { get; set; }
+    [Range(0, 150)]
+    public int Age { get; set; }
 
     // Navigation collections
     // one-to-one

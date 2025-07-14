@@ -1,21 +1,22 @@
-﻿using System;
+﻿using HealthCareManagementSystem.Application.DTOs;
+using HealthCareManagementSystem.Domain.Entities;
+using HealthCareManagementSystem.Infrastructure;
+using HealthCareManagementSystem.Infrastructure.Contracts;
+using HealthCareManagementSystem.Infrastructure.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HealthCareManagementSystem.Application.DTOs;
-using HealthCareManagementSystem.Domain.Entities;
-using HealthCareManagementSystem.Infrastructure.Contracts;
-using HealthCareManagementSystem.Infrastructure.Repositories;
 
 namespace HealthCareManagementSystem.Application.Services
 {
     public class PatientService : IPatientService
     {
         private readonly IPatientContract _patientRepository;
-        public PatientService()
+        public PatientService(HealthCareManagementSystemDbContext dbContext)
         {
-            _patientRepository = new PatientRepository();
+            _patientRepository = new PatientRepository(dbContext);
         }
         public async Task AddPatientAsync(PatientCreateDTO patient)
         {
@@ -66,6 +67,7 @@ namespace HealthCareManagementSystem.Application.Services
                 PatientId = patient.PatientId,
                 FullName = patient.FullName,
                 Gender = patient.Gender,
+                Email = patient.Email,
                 ContactNum = patient.ContactNum,
                 Age = patient.Age
             };

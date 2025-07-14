@@ -11,6 +11,7 @@ namespace HealthCareManagementSystem.Application.DTOs
         public string PatientId { get; set; } = null!;
         public string FullName { get; set; } = null!;
         public string? Gender { get; set; }
+        public string Email { get; set; } = null!;
         public string ContactNum { get; set; } = null!;
         public int Age { get; set; }
 
