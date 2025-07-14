@@ -18,78 +18,92 @@ namespace HealthCareManagementSystem.Application.Services
             _doctorRepository = new DoctorRepository(dbContext);
         }
 
-        public async Task AddDoctorAsync(DoctorDTO doctor)
+        public async Task AddDoctorAsync(DoctorCreateDTO doctor)
         {
             var doctorEntity = new Doctor
             {
                 DoctorId = doctor.DoctorId,
                 FullName = doctor.FullName,
-                Department = doctor.Department,
-                ContactNum = doctor.ContactNum,
-                Email = doctor.Email,
                 Bio = doctor.Bio,
+                Department = doctor.Department,
+                WorkStart = doctor.WorkStart,
+                WorkEnd = doctor.WorkEnd,
                 Qualification = doctor.Qualification,
+                Email = doctor.Email,
+                ContactNum = doctor.ContactNum,
                 ExperienceYears = doctor.ExperienceYears,
-                AppointmentsDone = doctor.AppointmentsDone,
-                // Default values
-                Available = true,
-                IsApproved = false,
-                WorkStart = new TimeSpan(9, 0, 0),
-                WorkEnd = new TimeSpan(17, 0, 0)
+                Available = false,
+                IsApproved = false
             };
 
             await _doctorRepository.CreateDoctorAsync(doctorEntity);
+        }
+
+        public async Task UpdateDoctorAsync(DoctorUpdateDTO doctor)
+        {
+            var doctorEntity = new Doctor
+            {
+                DoctorId = doctor.DoctorId,
+                FullName = doctor.FullName,
+                Bio = doctor.Bio,
+                Department = doctor.Department,
+                WorkStart = doctor.WorkStart,
+                WorkEnd = doctor.WorkEnd,
+                Qualification = doctor.Qualification,
+                Email = doctor.Email,
+                ContactNum = doctor.ContactNum,
+                ExperienceYears = doctor.ExperienceYears,
+                Available = true, // optionally keep current value by fetching if needed
+                IsApproved = doctor.IsApproved
+            };
+
+            await _doctorRepository.UpdateDoctorAsync(doctorEntity);
+        }
+
+        public async Task<DoctorReadDTO?> GetDoctorByIdAsync(string doctorId)
+        {
+            var doctor = await _doctorRepository.GetDoctorByIdAsync(doctorId);
+            if (doctor == null) return null;
+
+            return new DoctorReadDTO
+            {
+                DoctorId = doctor.DoctorId,
+                FullName = doctor.FullName,
+                Bio = doctor.Bio,
+                Department = doctor.Department,
+                WorkStart = doctor.WorkStart,
+                WorkEnd = doctor.WorkEnd,
+                Qualification = doctor.Qualification,
+                Email = doctor.Email,
+                ContactNum = doctor.ContactNum,
+                ExperienceYears = doctor.ExperienceYears,
+                IsApproved = doctor.IsApproved
+            };
+        }
+
+        public async Task<IEnumerable<DoctorReadDTO>> GetAllDoctorsAsync()
+        {
+            var doctors = await _doctorRepository.GetAllDoctorsAsync();
+
+            return doctors.Select(doctor => new DoctorReadDTO
+            {
+                DoctorId = doctor.DoctorId,
+                FullName = doctor.FullName,
+                Bio = doctor.Bio,
+                Department = doctor.Department,
+                WorkStart = doctor.WorkStart,
+                WorkEnd = doctor.WorkEnd,
+                Qualification = doctor.Qualification,
+                Email = doctor.Email,
+                ContactNum = doctor.ContactNum,
+                ExperienceYears = doctor.ExperienceYears,
+                IsApproved = doctor.IsApproved
+            });
         }
 
         public async Task DeleteDoctorAsync(string doctorId)
         {
             await _doctorRepository.DeleteDoctorAsync(doctorId);
         }
-
-        public async Task<IEnumerable<DoctorDTO>> GetAllDoctorsAsync()
-        {
-            var doctors = await _doctorRepository.GetAllDoctorsAsync();
-            return doctors.Select(d => new DoctorDTO
-            {
-                DoctorId = d.DoctorId,
-                FullName = d.FullName,
-                Department = d.Department ?? "N/A",
-                ContactNum = d.ContactNum,
-                Email = d.Email
-            });
-        }
-
-        public async Task<DoctorDTO> GetDoctorByIdAsync(string doctorId)
-        {
-            var doctor = await _doctorRepository.GetDoctorByIdAsync(doctorId);
-            if (doctor == null) return null;
-
-            return new DoctorDTO
-            {
-                DoctorId = doctor.DoctorId,
-                FullName = doctor.FullName,
-                Department = doctor.Department ?? "N/A",
-                ContactNum = doctor.ContactNum,
-                Email = doctor.Email
-            };
-        }
-
-        public async Task UpdateDoctorAsync(DoctorDTO doctor)
-        {
-            var existing = await _doctorRepository.GetDoctorByIdAsync(doctor.DoctorId);
-            if (existing == null) return;
-
-            existing.FullName = doctor.FullName;
-            existing.Department = doctor.Department;
-            existing.ContactNum = doctor.ContactNum;
-            existing.Email = doctor.Email;
-            existing.Bio = doctor.Bio;
-            existing.Qualification = doctor.Qualification;
-            existing.ExperienceYears = doctor.ExperienceYears;
-            existing.AppointmentsDone = doctor.AppointmentsDone;
-
-            await _doctorRepository.UpdateDoctorAsync(existing);
-        }
-
     }
 }

@@ -6,10 +6,10 @@ namespace HealthCareManagementSystem.Application.Services
 {
     public interface IDoctorService
     {
-        Task<IEnumerable<DoctorDTO>> GetAllDoctorsAsync();
-        Task<DoctorDTO> GetDoctorByIdAsync(string doctorId);
-        Task AddDoctorAsync(DoctorDTO doctor);
-        Task UpdateDoctorAsync(DoctorDTO doctor);
+        Task<IEnumerable<DoctorReadDTO>> GetAllDoctorsAsync();
+        Task<DoctorReadDTO?> GetDoctorByIdAsync(string doctorId);
+        Task AddDoctorAsync(DoctorCreateDTO doctor);
+        Task UpdateDoctorAsync(DoctorUpdateDTO doctor);
         Task DeleteDoctorAsync(string doctorId);
     }
 }
