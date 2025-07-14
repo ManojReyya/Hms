@@ -15,3 +15,11 @@ C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\Healt
 C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.pdb
 C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.genruntimeconfig.cache
 C:\Users\hp\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\ref\HealthCareManagementSystem.Infrastructure.dll
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.AssemblyInfo.cs
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.dll
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\refint\HealthCareManagementSystem.Infrastructure.dll
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.pdb
