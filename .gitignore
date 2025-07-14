@@ -1,21 +1,39 @@
-# Ignore build outputs
+# -------------------------------
+# Build output folders
+# -------------------------------
 **/bin/
 **/obj/
 
-# Ignore migrations
-**/Migrations/
-
-# Ignore Rider/JetBrains/IDEA files
-.idea/
+# -------------------------------
+# User-specific files
+# -------------------------------
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Ignore Mac system files
-.DS_Store
+# -------------------------------
+# Visual Studio / VS Code folders
+# -------------------------------
+.vs/
+.idea/
+.vscode/
 
-# Ignore local secrets (if any)
+# -------------------------------
+# Entity Framework Migrations
+# -------------------------------
+**/Migrations/
+
+# -------------------------------
+# OS-specific files
+# -------------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------------
+# Secrets / configs (optional)
+# -------------------------------
 secrets.json
+appsettings.Development.json
 
 **/.vs/
