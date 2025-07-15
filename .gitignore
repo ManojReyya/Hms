@@ -37,3 +37,6 @@ secrets.json
 appsettings.Development.json
 
 **/.vs/
+
+HealthCareManagementSystem/HealthCareManagementSystem.ConsoleTester/
+
