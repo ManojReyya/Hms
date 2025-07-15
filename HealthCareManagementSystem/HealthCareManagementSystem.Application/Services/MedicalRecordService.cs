@@ -136,7 +136,6 @@ public class MedicalRecordService : IMedicalRecordService
 
         var createdMedicalRecord = await _medicalRecordRepo.CreateMedicalRecordAsync(medicalRecord);
 
-        // Fetch the created record with related entities to get patient and doctor names
         var recordWithRelatedData = await _medicalRecordRepo.GetMedicalRecordByIdAsync(createdMedicalRecord.MedicalRecordId);
 
         return new MedicalRecordReadDTO()
@@ -168,8 +167,7 @@ public class MedicalRecordService : IMedicalRecordService
         existing.RecordDate = dto.RecordDate;
 
         var updated = await _medicalRecordRepo.UpdateMedicalRecordAsync(existing);
-
-        // Fetch the updated record with related entities to get patient and doctor names
+        
         var recordWithRelatedData = await _medicalRecordRepo.GetMedicalRecordByIdAsync(updated.MedicalRecordId);
 
         return new MedicalRecordReadDTO()
