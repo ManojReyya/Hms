@@ -9,14 +9,15 @@ namespace HealthCareManagementSystem.Application.Services
 {
     public interface IMedicalRecordService
     {
-        Task<IEnumerable<MedicalRecordReadDTO>> GetAllMedicalRecordsAsync();
-        Task<MedicalRecordReadDTO?> GetMedicalRecordByIdAsync(int medicalRecordId);
+        Task<IEnumerable<MedicalRecordReadDTO>> GetAllAsync();
+        Task<MedicalRecordReadDTO?> GetByIdAsync(int id);
         Task<IEnumerable<MedicalRecordReadDTO>> GetMedicalRecordsByPatientIdAsync(string patientId);
         Task<IEnumerable<MedicalRecordReadDTO>> GetMedicalRecordsByDoctorIdAsync(string doctorId);
         Task<IEnumerable<MedicalRecordReadDTO>> GetMedicalRecordsByAppointmentIdAsync(int appointmentId);
         Task<IEnumerable<MedicalRecordReadDTO>> GetMedicalRecordsByDateAsync(DateTime date);
-        Task<MedicalRecordReadDTO> CreateMedicalRecordAsync(MedicalRecordCreateDTO medicalRecord);
-        Task<MedicalRecordReadDTO?> UpdateMedicalRecordAsync(MedicalRecordUpdateDTO medicalRecord);
-        Task<bool> DeleteMedicalRecordAsync(int medicalRecordId);
+        Task<MedicalRecordReadDTO> CreateAsync(MedicalRecordCreateDTO medicalRecord);
+        Task<MedicalRecordReadDTO?> UpdateAsync(MedicalRecordUpdateDTO medicalRecord);
+        Task<MedicalRecordReadDTO?> DeleteAsync(int medicalRecordId);
     }
+
 }
