@@ -1,4 +1,4 @@
-using HealthCareManagementSystem.Application.DTOs;
+using HealthCareManagementSystem.Application.DTOs.DoctorDTOs;
 using HealthCareManagementSystem.Domain.Entities;
 using HealthCareManagementSystem.Infrastructure.Contracts;
 using HealthCareManagementSystem.Infrastructure.Repositories;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HealthCareManagementSystem.Application.Services
+namespace HealthCareManagementSystem.Application.Services.DoctorServices
 {
     public class DoctorService : IDoctorService
     {

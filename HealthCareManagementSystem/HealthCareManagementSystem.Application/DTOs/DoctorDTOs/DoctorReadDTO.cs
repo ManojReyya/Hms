@@ -1,4 +1,4 @@
-﻿namespace HealthCareManagementSystem.Application.DTOs;
+﻿namespace HealthCareManagementSystem.Application.DTOs.DoctorDTOs;
 
 public class DoctorReadDTO
 {

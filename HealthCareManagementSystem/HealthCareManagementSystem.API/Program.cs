@@ -4,6 +4,7 @@ using HealthCareManagementSystem.Infrastructure;
 using HealthCareManagementSystem.Infrastructure.Contracts;
 using HealthCareManagementSystem.Infrastructure.Repositories;
 using HealthCareManagementSystem.Application.Services;
+using HealthCareManagementSystem.Application.Services.MedicalRecordServices;
 
 namespace HealthCareManagementSystem.API
 {

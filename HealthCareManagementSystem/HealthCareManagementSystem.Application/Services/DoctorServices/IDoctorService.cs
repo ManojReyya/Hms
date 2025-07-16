@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using HealthCareManagementSystem.Application.DTOs;
+using HealthCareManagementSystem.Application.DTOs.DoctorDTOs;
 
-namespace HealthCareManagementSystem.Application.Services
+namespace HealthCareManagementSystem.Application.Services.DoctorServices
 {
     public interface IDoctorService
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HealthCareManagementSystem.Application.DTOs
+namespace HealthCareManagementSystem.Application.DTOs.PatientDTOs
 {
     public class PatientUpdateDTO
     {

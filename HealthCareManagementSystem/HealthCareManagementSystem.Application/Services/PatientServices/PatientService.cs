@@ -1,4 +1,4 @@
-﻿using HealthCareManagementSystem.Application.DTOs;
+﻿using HealthCareManagementSystem.Application.DTOs.PatientDTOs;
 using HealthCareManagementSystem.Domain.Entities;
 using HealthCareManagementSystem.Infrastructure;
 using HealthCareManagementSystem.Infrastructure.Contracts;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HealthCareManagementSystem.Application.Services
+namespace HealthCareManagementSystem.Application.Services.PatientServices
 {
     public class PatientService : IPatientService
     {

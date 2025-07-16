@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using HealthCareManagementSystem.Application.Services;
-using HealthCareManagementSystem.Application.DTOs;
+using HealthCareManagementSystem.Application.Services.MedicalRecordServices;
+using HealthCareManagementSystem.Application.DTOs.MedicalRecordDTOs;
 
 namespace HealthCareManagementSystem.API.Controllers
 {

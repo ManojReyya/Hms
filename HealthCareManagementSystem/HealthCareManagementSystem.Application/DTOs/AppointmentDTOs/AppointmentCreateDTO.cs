@@ -1,6 +1,6 @@
 using HealthCareManagementSystem.Domain.Enums;
 
-namespace HealthCareManagementSystem.Application.DTOs;
+namespace HealthCareManagementSystem.Application.DTOs.AppointmentDTOs;
 
 public class AppointmentCreateDTO
 {
