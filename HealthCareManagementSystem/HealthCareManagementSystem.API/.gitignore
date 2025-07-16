@@ -1,0 +1,39 @@
+# -------------------------------
+# Build output folders
+# -------------------------------
+**/bin/
+**/obj/
+
+# -------------------------------
+# User-specific files
+# -------------------------------
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# -------------------------------
+# Visual Studio / VS Code folders
+# -------------------------------
+.vs/
+.idea/
+.vscode/
+
+# -------------------------------
+# Entity Framework Migrations
+# -------------------------------
+**/Migrations/
+
+# -------------------------------
+# OS-specific files
+# -------------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------------
+# Secrets / configs (optional)
+# -------------------------------
+secrets.json
+appsettings.Development.json
+
+**/.vs/
