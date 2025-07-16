@@ -1,10 +1,12 @@
 using HealthCareManagementSystem.Domain.Enums;
 
-namespace HealthCareManagementSystem.Application.DTOs;
+namespace HealthCareManagementSystem.Application.DTOs.AppointmentDTOs;
 
-public class AppointmentUpdateDTO
+public class AppointmentReadDTO
 {
     public int AppointmentId { get; set; }
+    public string DoctorId { get; set; } = null!;
+    public string PatientId { get; set; } = null!;
     public DateTime AppointmentDate { get; set; }
     public TimeSpan SlotStart { get; set; }
     public TimeSpan SlotEnd { get; set; }

@@ -1,6 +1,6 @@
-using HealthCareManagementSystem.Application.DTOs;
+using HealthCareManagementSystem.Application.DTOs.AppointmentDTOs;
 
-namespace HealthCareManagementSystem.Application.Services;
+namespace HealthCareManagementSystem.Application.Services.AppointmentServices;
 
 public interface IAppointmentService
 {

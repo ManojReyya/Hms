@@ -1,8 +1,8 @@
-using HealthCareManagementSystem.Application.DTOs;
+using HealthCareManagementSystem.Application.DTOs.MedicalRecordDTOs;
 using HealthCareManagementSystem.Domain.Entities;
 using HealthCareManagementSystem.Infrastructure.Contracts;
 
-namespace HealthCareManagementSystem.Application.Services;
+namespace HealthCareManagementSystem.Application.Services.MedicalRecordServices;
 
 public class MedicalRecordService : IMedicalRecordService
 {

@@ -1,8 +1,9 @@
-using HealthCareManagementSystem.Application.DTOs;
+using HealthCareManagementSystem.Application;
+using HealthCareManagementSystem.Application.DTOs.AppointmentDTOs;
 using HealthCareManagementSystem.Domain.Entities;
 using HealthCareManagementSystem.Infrastructure.Contracts;
 
-namespace HealthCareManagementSystem.Application.Services;
+namespace HealthCareManagementSystem.Application.Services.AppointmentServices;
 
 public class AppointmentService: IAppointmentService
 {

@@ -1,11 +1,11 @@
-﻿using HealthCareManagementSystem.Application.DTOs;
+﻿using HealthCareManagementSystem.Application.DTOs.PatientDTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HealthCareManagementSystem.Application.Services
+namespace HealthCareManagementSystem.Application.Services.PatientServices
 {
     public interface IPatientService
     {
