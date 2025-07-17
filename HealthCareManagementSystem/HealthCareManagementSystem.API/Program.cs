@@ -6,7 +6,14 @@ using HealthCareManagementSystem.Application.Services.PatientServices;
 using HealthCareManagementSystem.Infrastructure;
 using HealthCareManagementSystem.Infrastructure.Contracts;
 using HealthCareManagementSystem.Infrastructure.Repositories;
+<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
+=======
+using HealthCareManagementSystem.Application.Services;
+using HealthCareManagementSystem.Application.Services.MedicalRecordServices;
+using HealthCareManagementSystem.Application.Services.DoctorServices;
+
+>>>>>>> 376063ba4e396869993352e373accca7c14b4243
 
 namespace HealthCareManagementSystem.API
 {
@@ -60,7 +67,12 @@ namespace HealthCareManagementSystem.API
 
             // Service Dependencies
             builder.Services.AddScoped<IMedicalRecordService, MedicalRecordService>();
+<<<<<<< HEAD
             builder.Services.AddScoped<IPatientService, PatientService>();
+=======
+            builder.Services.AddScoped<IDoctorService, DoctorService>();
+
+>>>>>>> 376063ba4e396869993352e373accca7c14b4243
 
             // CORS Configuration for frontend integration
             builder.Services.AddCors(options =>
