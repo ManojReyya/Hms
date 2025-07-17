@@ -1,10 +1,12 @@
 
-using Microsoft.EntityFrameworkCore;
+using HealthCareManagementSystem.API.Controllers;
+using HealthCareManagementSystem.Application.Services;
+using HealthCareManagementSystem.Application.Services.MedicalRecordServices;
+using HealthCareManagementSystem.Application.Services.PatientServices;
 using HealthCareManagementSystem.Infrastructure;
 using HealthCareManagementSystem.Infrastructure.Contracts;
 using HealthCareManagementSystem.Infrastructure.Repositories;
-using HealthCareManagementSystem.Application.Services;
-using HealthCareManagementSystem.Application.Services.MedicalRecordServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace HealthCareManagementSystem.API
 {
@@ -15,6 +17,9 @@ namespace HealthCareManagementSystem.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container
+
+            
+
             builder.Services.AddControllers()
                 .ConfigureApiBehaviorOptions(options =>
                 {
@@ -47,12 +52,15 @@ namespace HealthCareManagementSystem.API
 
             // Database Context - using the existing OnConfiguring method
             builder.Services.AddDbContext<HealthCareManagementSystemDbContext>();
+            
 
             // Repository Dependencies
             builder.Services.AddScoped<IMedicalRecordContract, MedicalRecordRepository>();
+            builder.Services.AddScoped<IPatientContract, PatientRepository>();
 
             // Service Dependencies
             builder.Services.AddScoped<IMedicalRecordService, MedicalRecordService>();
+            builder.Services.AddScoped<IPatientService, PatientService>();
 
             // CORS Configuration for frontend integration
             builder.Services.AddCors(options =>

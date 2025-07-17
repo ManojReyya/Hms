@@ -23,3 +23,12 @@ C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\He
 C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.dll
 C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\refint\HealthCareManagementSystem.Infrastructure.dll
 C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.pdb
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\bin\Debug\net8.0\HealthCareManagementSystem.Infrastructure.deps.json
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\bin\Debug\net8.0\HealthCareManagementSystem.Infrastructure.runtimeconfig.json
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\bin\Debug\net8.0\HealthCareManagementSystem.Infrastructure.dll
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\bin\Debug\net8.0\HealthCareManagementSystem.Infrastructure.pdb
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\bin\Debug\net8.0\HealthCareManagementSystem.Domain.dll
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\bin\Debug\net8.0\HealthCareManagementSystem.Domain.pdb
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCa.12B6E152.Up2Date
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\HealthCareManagementSystem.Infrastructure.genruntimeconfig.cache
+C:\Users\noshy\health-case-app_ttp1adda2510_team-1\HealthCareManagementSystem\HealthCareManagementSystem.Infrastructure\obj\Debug\net8.0\ref\HealthCareManagementSystem.Infrastructure.dll

@@ -45,7 +45,7 @@ namespace HealthCareManagementSystem.Application.Services.PatientServices
                 Age = p.Age
             });
         }
-        public async Task<PatientReadDTO> GetPatientByIdAsync(string patientId)
+        public async Task<PatientReadDTO?> GetPatientByIdAsync(string patientId)
         {
             var p=await _patientRepository.GetPatientByIdAsync(patientId);
             if (p == null)

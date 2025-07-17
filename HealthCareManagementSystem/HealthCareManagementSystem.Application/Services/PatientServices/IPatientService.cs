@@ -10,7 +10,7 @@ namespace HealthCareManagementSystem.Application.Services.PatientServices
     public interface IPatientService
     {
         Task<IEnumerable<PatientReadDTO>> GetAllPatientsAsync();
-        Task<PatientReadDTO> GetPatientByIdAsync(string patientId);
+        Task<PatientReadDTO?> GetPatientByIdAsync(string patientId);
         Task AddPatientAsync(PatientCreateDTO patient);
         Task UpdatePatientAsync(PatientUpdateDTO patient);
         Task DeletePatientAsync(string patientId);
