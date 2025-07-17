@@ -5,6 +5,8 @@ using HealthCareManagementSystem.Infrastructure.Contracts;
 using HealthCareManagementSystem.Infrastructure.Repositories;
 using HealthCareManagementSystem.Application.Services;
 using HealthCareManagementSystem.Application.Services.MedicalRecordServices;
+using HealthCareManagementSystem.Application.Services.DoctorServices;
+
 
 namespace HealthCareManagementSystem.API
 {
@@ -53,6 +55,8 @@ namespace HealthCareManagementSystem.API
 
             // Service Dependencies
             builder.Services.AddScoped<IMedicalRecordService, MedicalRecordService>();
+            builder.Services.AddScoped<IDoctorService, DoctorService>();
+
 
             // CORS Configuration for frontend integration
             builder.Services.AddCors(options =>
