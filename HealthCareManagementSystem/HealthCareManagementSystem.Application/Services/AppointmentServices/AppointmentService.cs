@@ -113,6 +113,8 @@ public class AppointmentService: IAppointmentService
         existing.Status = dto.Status;
 
         var updated = await _appointmentRepo.UpdateAppointmentAsync(existing);
+        
+        if (updated == null) return null;
 
         return new AppointmentReadDTO()
         {
@@ -129,6 +131,7 @@ public class AppointmentService: IAppointmentService
     public async Task<AppointmentReadDTO?> DeleteAsync(int id)
     {
         var deleted = await _appointmentRepo.DeleteAppointmentAsync(id);
+        if (deleted == null) return null;
         return new AppointmentReadDTO
         {
             AppointmentId = deleted.AppointmentId,

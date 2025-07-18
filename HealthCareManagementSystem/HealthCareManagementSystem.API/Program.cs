@@ -6,14 +6,15 @@ using HealthCareManagementSystem.Application.Services.PatientServices;
 using HealthCareManagementSystem.Infrastructure;
 using HealthCareManagementSystem.Infrastructure.Contracts;
 using HealthCareManagementSystem.Infrastructure.Repositories;
-<<<<<<< HEAD
+
 using Microsoft.EntityFrameworkCore;
-=======
+
 using HealthCareManagementSystem.Application.Services;
+using HealthCareManagementSystem.Application.Services.AppointmentServices;
 using HealthCareManagementSystem.Application.Services.MedicalRecordServices;
 using HealthCareManagementSystem.Application.Services.DoctorServices;
 
->>>>>>> 376063ba4e396869993352e373accca7c14b4243
+
 
 namespace HealthCareManagementSystem.API
 {
@@ -64,15 +65,18 @@ namespace HealthCareManagementSystem.API
             // Repository Dependencies
             builder.Services.AddScoped<IMedicalRecordContract, MedicalRecordRepository>();
             builder.Services.AddScoped<IPatientContract, PatientRepository>();
+            builder.Services.AddScoped<IAppointmentContract, AppointmentRepository>();
 
             // Service Dependencies
             builder.Services.AddScoped<IMedicalRecordService, MedicalRecordService>();
-<<<<<<< HEAD
-            builder.Services.AddScoped<IPatientService, PatientService>();
-=======
-            builder.Services.AddScoped<IDoctorService, DoctorService>();
 
->>>>>>> 376063ba4e396869993352e373accca7c14b4243
+            builder.Services.AddScoped<IPatientService, PatientService>();
+
+            builder.Services.AddScoped<IDoctorService, DoctorService>();
+            
+            builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+
+
 
             // CORS Configuration for frontend integration
             builder.Services.AddCors(options =>

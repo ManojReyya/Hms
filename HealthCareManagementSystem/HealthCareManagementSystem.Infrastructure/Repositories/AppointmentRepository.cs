@@ -26,7 +26,7 @@ public class AppointmentRepository: IAppointmentContract
         return await _dbContext.Appointments
             .Include(a => a.Doctor)
             .Include(a => a.Patient)
-            .FirstAsync(a => a.AppointmentId == appointmentId);
+            .FirstOrDefaultAsync(a => a.AppointmentId == appointmentId);
     }
 
     public async Task<IEnumerable<Appointment>> GetAppointmentsByDoctorIdAsync(string doctorId)
@@ -61,20 +61,20 @@ public class AppointmentRepository: IAppointmentContract
         return appointment;
     }
 
-    public async Task<Appointment> UpdateAppointmentAsync(Appointment appointment)
+    public async Task<Appointment?> UpdateAppointmentAsync(Appointment appointment)
     {
         var existing = await _dbContext.Appointments.FindAsync(appointment.AppointmentId);
-        if (existing == null) return null!;
+        if (existing == null) return null;
 
         _dbContext.Entry(existing).CurrentValues.SetValues(appointment);
         await _dbContext.SaveChangesAsync();
         return existing;
     }
 
-    public async Task<Appointment> DeleteAppointmentAsync(int appointmentId)
+    public async Task<Appointment?> DeleteAppointmentAsync(int appointmentId)
     {
-        var existing = _dbContext.Appointments.Find(appointmentId);
-        if (existing == null) return null!;
+        var existing = await _dbContext.Appointments.FindAsync(appointmentId);
+        if (existing == null) return null;
 
         _dbContext.Appointments.Remove(existing);
         await _dbContext.SaveChangesAsync();

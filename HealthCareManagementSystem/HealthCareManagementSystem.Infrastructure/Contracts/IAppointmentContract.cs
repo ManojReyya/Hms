@@ -10,7 +10,7 @@ public interface IAppointmentContract
     Task<IEnumerable<Appointment>>  GetAppointmentsByPatientIdAsync(string patientId);
     Task<IEnumerable<Appointment>> GetAppointmentsByDateAsync(DateTime date);
     Task<Appointment> CreateAppointmentAsync(Appointment appointment);
-    Task<Appointment> UpdateAppointmentAsync(Appointment appointment);
-    Task<Appointment> DeleteAppointmentAsync(int appointmentId);
+    Task<Appointment?> UpdateAppointmentAsync(Appointment appointment);
+    Task<Appointment?> DeleteAppointmentAsync(int appointmentId);
     
 }
