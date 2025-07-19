@@ -11,7 +11,7 @@ namespace HealthCareManagementSystem.Infrastructure.Contracts
         Task<Doctor> DeleteDoctorAsync(string doctorId);
         Task<Doctor> ApproveDoctorAsync(string userId, Doctor doctorProfile);
         Task<IEnumerable<Doctor>> GetPendingDoctorsAsync();
-
+        Task<IEnumerable<Doctor>> GetDoctorsByDepartmentAsync(string department);
 
     }
 }

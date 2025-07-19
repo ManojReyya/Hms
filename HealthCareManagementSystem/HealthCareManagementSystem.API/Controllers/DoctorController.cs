@@ -39,24 +39,42 @@ namespace HealthCareManagementSystem.API.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateDoctor([FromBody] DoctorCreateDTO newDoctor)
         {
-            await _doctorService.AddDoctorAsync(newDoctor);
-            return Ok(new { message = "Doctor created successfully." });
+            var createdDoctor = await _doctorService.AddDoctorAsync(newDoctor);
+            return Ok(new { message = "Doctor created successfully.", data = createdDoctor });
         }
+
 
         // PUT: api/Doctor
         [HttpPut]
         public async Task<ActionResult> UpdateDoctor([FromBody] DoctorUpdateDTO updatedDoctor)
         {
-            await _doctorService.UpdateDoctorAsync(updatedDoctor);
-            return Ok(new { message = "Doctor updated successfully." });
+            var doctor = await _doctorService.UpdateDoctorAsync(updatedDoctor);
+            return Ok(new { message = "Doctor updated successfully.", data = doctor });
         }
+
 
         // DELETE: api/Doctor/{id}
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteDoctor(string id)
         {
-            await _doctorService.DeleteDoctorAsync(id);
-            return Ok(new { message = "Doctor deleted successfully." });
+            var deletedDoctor = await _doctorService.DeleteDoctorAsync(id);
+            if (deletedDoctor == null)
+                return NotFound(new { message = "Doctor not found." });
+
+            return Ok(new
+            {
+                message = "Doctor deleted successfully.",
+                data = deletedDoctor
+            });
         }
+        [HttpGet("department/{department}")]
+        public async Task<ActionResult<IEnumerable<DoctorReadDTO>>> GetDoctorsByDepartment(string department)
+        {
+            var doctors = await _doctorService.GetDoctorsByDepartmentAsync(department);
+            return Ok(doctors);
+        }
+
+
+
     }
 }

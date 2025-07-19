@@ -83,5 +83,13 @@ namespace HealthCareManagementSystem.Infrastructure.Repositories
                 .Where(d => d.IsApproved == false)
                 .ToListAsync();
         }
+
+        public async Task<IEnumerable<Doctor>> GetDoctorsByDepartmentAsync(string department)
+        {
+            return await _dbContext.Doctors
+                .Where(d => d.Department != null && d.Department.ToLower() == department.ToLower())
+                .ToListAsync();
+        }
+
     }
 }
