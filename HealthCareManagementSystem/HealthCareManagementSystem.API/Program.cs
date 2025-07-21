@@ -10,10 +10,11 @@ using HealthCareManagementSystem.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 using HealthCareManagementSystem.Application.Services;
+using HealthCareManagementSystem.Application.Services.AdminServices;
 using HealthCareManagementSystem.Application.Services.AppointmentServices;
 using HealthCareManagementSystem.Application.Services.MedicalRecordServices;
 using HealthCareManagementSystem.Application.Services.DoctorServices;
-
+using HealthCareManagementSystem.Application.Services.UserServices;
 
 
 namespace HealthCareManagementSystem.API
@@ -66,16 +67,16 @@ namespace HealthCareManagementSystem.API
             builder.Services.AddScoped<IMedicalRecordContract, MedicalRecordRepository>();
             builder.Services.AddScoped<IPatientContract, PatientRepository>();
             builder.Services.AddScoped<IAppointmentContract, AppointmentRepository>();
-
+            builder.Services.AddScoped<IAdminContract, AdminRepository>();
+            builder.Services.AddScoped<IUserContract, UserRepository>();
+            
             // Service Dependencies
             builder.Services.AddScoped<IMedicalRecordService, MedicalRecordService>();
-
             builder.Services.AddScoped<IPatientService, PatientService>();
-
             builder.Services.AddScoped<IDoctorService, DoctorService>();
-            
             builder.Services.AddScoped<IAppointmentService, AppointmentService>();
-
+            builder.Services.AddScoped<IAdminService, AdminService>();
+            builder.Services.AddScoped<IUserService, UserService>();
 
 
             // CORS Configuration for frontend integration
