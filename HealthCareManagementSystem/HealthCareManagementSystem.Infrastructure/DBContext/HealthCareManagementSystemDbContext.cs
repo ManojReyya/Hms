@@ -109,6 +109,7 @@ namespace HealthCareManagementSystem.Infrastructure
                     // actual password => admin@123
                     Password = "$2a$12$bQx1RmyUCP.E8vNe6RFk5ugrLHHxQiee/yau.xfBKHXsn9huz7U6C",
                     Role = UserRole.Admin,
+                    IsActive = true,
                     CreatedAt = new DateTime(2024, 1, 1, 10, 0, 0)
                 },
                 new User
@@ -117,6 +118,7 @@ namespace HealthCareManagementSystem.Infrastructure
                     // actual password => doctor@123
                     Password = "$2a$12$D/ys3Mu9NoInYBOtNoEDP.Dh4IfbUS1Ihuhj8GlvHZCwN2YpdkqwW",
                     Role = UserRole.Doctor,
+                    IsActive = true,
                     CreatedAt = new DateTime(2024, 1, 1, 9, 0, 0)
                 },
                 new User
@@ -125,6 +127,7 @@ namespace HealthCareManagementSystem.Infrastructure
                     // actual password => patient@123
                     Password = "$2a$12$pIR23T7gg7saSRoh2g.y8eFAefYJSM2ueAp4NnHQmEGB/3BRwJYHW",
                     Role = UserRole.Patient,
+                    IsActive = true,
                     CreatedAt = new DateTime(2024, 1, 1, 8, 0, 0)
                 }
 
