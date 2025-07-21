@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using HealthCareManagementSystem.Domain.Entities;
 
 namespace HealthCareManagementSystem.Infrastructure.Contracts

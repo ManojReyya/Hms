@@ -16,8 +16,10 @@ public class User
     [Required]
     public UserRole Role { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    [Required]
+    public Boolean IsActive { get; set; }
     
+    public DateTime CreatedAt { get; set; }
     
     // Navigation Properties
     // one-to-one

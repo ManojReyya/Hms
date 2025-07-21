@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using HealthCareManagementSystem.Domain.Entities;
 using HealthCareManagementSystem.Infrastructure.Contracts;
 using Microsoft.EntityFrameworkCore;
@@ -38,6 +40,14 @@ namespace HealthCareManagementSystem.Infrastructure.Repositories
 
             _dbContext.Entry(existingUser).CurrentValues.SetValues(user);
             await _dbContext.SaveChangesAsync();
+            return existingUser;
+        }
+
+        public async Task<User> DeactivateUser(string userId)
+        {
+            var existingUser = await _dbContext.Users.FindAsync(userId);
+            if (existingUser == null) return null!;
+            existingUser.IsActive = false;
             return existingUser;
         }
 

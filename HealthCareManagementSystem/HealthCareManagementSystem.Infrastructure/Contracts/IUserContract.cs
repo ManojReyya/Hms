@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using HealthCareManagementSystem.Domain.Entities;
 
 namespace HealthCareManagementSystem.Infrastructure.Contracts
@@ -9,5 +11,6 @@ namespace HealthCareManagementSystem.Infrastructure.Contracts
         Task<User> CreateUserAsync(User user);
         Task<User> UpdateUserAsync(User user);
         Task<User> DeleteUserAsync(string userId);
+        Task<User> DeactivateUser(string userId);
     }
 }
