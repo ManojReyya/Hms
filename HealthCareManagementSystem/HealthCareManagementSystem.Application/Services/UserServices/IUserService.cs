@@ -9,5 +9,6 @@ namespace HealthCareManagementSystem.Application.Services.UserServices
         Task CreateUserAsync(UserCreateDTO dto);
         Task UpdateUserAsync(UserUpdateDTO dto);
         Task DeleteUserAsync(string userId);
+        Task DeactivateUser(string userId);
     }
 }

@@ -81,5 +81,17 @@ namespace HealthCareManagementSystem.Application.Services.UserServices
 
             await _userRepo.DeleteUserAsync(userId);
         }
+
+        public async Task DeactivateUser(string userId)
+        {
+            var user = await _userRepo.GetUserByIdAsync(userId);
+            if (user == null)
+                throw new KeyNotFoundException("User not found.");
+
+            if (user.Role == UserRole.Admin)
+                throw new InvalidOperationException("Admin users cannot be deactivated.");
+
+            await _userRepo.DeactivateUser(userId);
+        }
     }
 }
