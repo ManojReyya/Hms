@@ -2,11 +2,13 @@ using HealthCareManagementSystem.Application.DTOs.AppointmentDTOs;
 using HealthCareManagementSystem.Application.Services.AppointmentServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HealthCareManagementSystem.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize] // Require authentication for all appointment endpoints
     public class AppointmentController : ControllerBase
     {
         private readonly IAppointmentService _appointmentService;
@@ -17,6 +19,7 @@ namespace HealthCareManagementSystem.API.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,Doctor")] // Only admins and doctors can view all appointments
         public async Task<IActionResult> GetAllAppointments()
         {
             var appointments = await _appointmentService.GetAllAsync();
@@ -33,6 +36,7 @@ namespace HealthCareManagementSystem.API.Controllers
         }
         
         [HttpGet("doctor/{doctorId}")]
+        [Authorize(Roles = "Admin,Doctor")] // Only admins and doctors can view doctor appointments
         public async Task<IActionResult> GetAppointmentsByDoctorId(string doctorId)
         {
             var appointments = await _appointmentService.GetAppointmentsByDoctorIdAsync(doctorId);
@@ -45,6 +49,7 @@ namespace HealthCareManagementSystem.API.Controllers
         }
         
         [HttpGet("patient/{patientId}")]
+        [Authorize(Roles = "Admin,Doctor,Patient")] // Admins, doctors, and patients can view patient appointments
         public async Task<IActionResult> GetAppointmentsByPatientId(string patientId)
         {
             var appointments = await _appointmentService.GetAppointmentsByPatientIdAsync(patientId);
@@ -64,6 +69,7 @@ namespace HealthCareManagementSystem.API.Controllers
         // }
         
         [HttpPost]
+        [Authorize(Roles = "Admin,Patient")] // Admins and patients can create appointments
         public async Task<IActionResult> CreateAppointment([FromBody] AppointmentCreateDTO appointment)
         {
             var created = await _appointmentService.CreateAsync(appointment);
@@ -71,6 +77,7 @@ namespace HealthCareManagementSystem.API.Controllers
         }
         
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,Doctor,Patient")] // Admins, doctors, and patients can update appointments
         public async Task<IActionResult> UpdateAppointment(int id, [FromBody] AppointmentUpdateDTO appointment)
         {
             if (id != appointment.AppointmentId)
@@ -81,6 +88,7 @@ namespace HealthCareManagementSystem.API.Controllers
         }
         
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")] // Only admins can delete appointments
         public async Task<IActionResult> DeleteAppointment(int id)
         {
             var deleted = await _appointmentService.DeleteAsync(id);

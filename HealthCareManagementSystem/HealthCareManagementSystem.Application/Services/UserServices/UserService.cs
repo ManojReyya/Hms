@@ -2,16 +2,23 @@ using HealthCareManagementSystem.Application.DTOs.UserDTOs;
 using HealthCareManagementSystem.Domain.Entities;
 using HealthCareManagementSystem.Domain.Enums;
 using HealthCareManagementSystem.Infrastructure.Contracts;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace HealthCareManagementSystem.Application.Services.UserServices
 {
     public class UserService : IUserService
     {
         private readonly IUserContract _userRepo;
+        private readonly IConfiguration _configuration;
 
-        public UserService(IUserContract userRepo)
+        public UserService(IUserContract userRepo, IConfiguration configuration)
         {
             _userRepo = userRepo;
+            _configuration = configuration;
         }
 
         public async Task<IEnumerable<UserReadDTO>> GetAllUsersAsync()
@@ -92,6 +99,73 @@ namespace HealthCareManagementSystem.Application.Services.UserServices
                 throw new InvalidOperationException("Admin users cannot be deactivated.");
 
             await _userRepo.DeactivateUser(userId);
+        }
+
+        // Authentication methods
+        public async Task RegisterAsync(User user)
+        {
+            user.CreatedAt = DateTime.UtcNow;
+            user.IsActive = true;
+            await _userRepo.Register(user);
+        }
+
+        public async Task<UserResponseDTO?> LoginAsync(LoginDTO loginDto)
+        {
+            if (loginDto == null || string.IsNullOrEmpty(loginDto.UserId) || string.IsNullOrEmpty(loginDto.Password))
+            {
+                return null;
+            }
+
+            var validatedUser = await _userRepo.Validate(loginDto.UserId, loginDto.Password);
+            if (validatedUser == null)
+            {
+                return null;
+            }
+
+            var response = new UserResponseDTO
+            {
+                UserId = validatedUser.UserId,
+                Role = validatedUser.Role.ToString(),
+                Token = GetToken(validatedUser)
+            };
+
+            return response;
+        }
+
+        private string GetToken(User user)
+        {
+            var issuer = _configuration["Jwt:Issuer"];
+            var audience = _configuration["Jwt:Audience"];
+            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
+
+            // Create a signing key using the symmetric security key
+            var signingCredentials = new SigningCredentials(
+                new SymmetricSecurityKey(key),
+                SecurityAlgorithms.HmacSha256
+            );
+
+            // Create claims for the user
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name, user.UserId),
+                new Claim(ClaimTypes.Role, user.Role.ToString()),
+            };
+
+            // Set the expiration time for the token
+            var expires = DateTime.UtcNow.AddMinutes(60); // 1 hour expiration
+
+            // Create the JWT token
+            var token = new JwtSecurityToken(
+                issuer: issuer,
+                audience: audience,
+                claims: claims,
+                expires: expires,
+                signingCredentials: signingCredentials
+            );
+
+            // Serialize the token to a string
+            var tokenStr = new JwtSecurityTokenHandler().WriteToken(token);
+            return tokenStr;
         }
     }
 }

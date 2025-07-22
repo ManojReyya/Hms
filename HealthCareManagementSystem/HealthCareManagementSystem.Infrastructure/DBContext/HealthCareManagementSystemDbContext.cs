@@ -17,7 +17,7 @@ namespace HealthCareManagementSystem.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=HospitalDB;User Id=sa;Password=1522858@Pati;Encrypt=false");
+            optionsBuilder.UseSqlServer("Server=ELIZA\\SQLEXPRESS;Database=HealthCareDB;Trusted_Connection=True;TrustServerCertificate=True;");
             
         }
 

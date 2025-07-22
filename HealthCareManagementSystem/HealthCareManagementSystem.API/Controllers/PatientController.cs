@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using HealthCareManagementSystem.Application.Services.PatientServices;
 using HealthCareManagementSystem.Application.DTOs.PatientDTOs;
 
@@ -6,6 +7,7 @@ namespace HealthCareManagementSystem.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize] // Require authentication for all patient endpoints
     public class PatientController : ControllerBase
     {
         private readonly IPatientService _patientService;
@@ -18,6 +20,7 @@ namespace HealthCareManagementSystem.API.Controllers
 
         // GET: api/Patient
         [HttpGet]
+        [Authorize(Roles = "Admin,Doctor")] // Only admins and doctors can view all patients
         public async Task<ActionResult<IEnumerable<PatientReadDTO>>> GetAllPatients()
         {
             try
@@ -38,6 +41,15 @@ namespace HealthCareManagementSystem.API.Controllers
         {
             try
             {
+                // Check authorization: Admin and Doctor can view any patient, Patient can only view their own data
+                var currentUserId = User.Identity?.Name;
+                var userRole = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
+                
+                if (userRole == "Patient" && currentUserId != id)
+                {
+                    return Forbid("Patients can only view their own information");
+                }
+
                 var patient = await _patientService.GetPatientByIdAsync(id);
                 if (patient == null)
                     return NotFound();
@@ -53,6 +65,7 @@ namespace HealthCareManagementSystem.API.Controllers
 
         // POST: api/Patient
         [HttpPost]
+        [Authorize(Roles = "Admin")] // Only admins can create patients
         public async Task<ActionResult<PatientReadDTO>> CreatePatient([FromBody] PatientCreateDTO patient)
         {
             if(!ModelState.IsValid)
@@ -79,6 +92,15 @@ namespace HealthCareManagementSystem.API.Controllers
 
             try
             {
+                // Check authorization: Admin and Doctor can update any patient, Patient can only update their own data
+                var currentUserId = User.Identity?.Name;
+                var userRole = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
+                
+                if (userRole == "Patient" && currentUserId != id)
+                {
+                    return Forbid("Patients can only update their own information");
+                }
+
                 await _patientService.UpdatePatientAsync(patient);
                 return Ok($"Patient with ID {id} updated successfully");
             }
@@ -91,6 +113,7 @@ namespace HealthCareManagementSystem.API.Controllers
 
         // DELETE: api/Patient/{id}
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")] // Only admins can delete patients
         public async Task<ActionResult<PatientReadDTO>> DeletePatient(string id)
         {
             try

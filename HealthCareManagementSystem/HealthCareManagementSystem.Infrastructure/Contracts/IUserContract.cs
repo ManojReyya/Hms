@@ -12,5 +12,9 @@ namespace HealthCareManagementSystem.Infrastructure.Contracts
         Task<User> UpdateUserAsync(User user);
         Task<User> DeleteUserAsync(string userId);
         Task<User> DeactivateUser(string userId);
+        
+        // Authentication methods following JWT pattern
+        Task Register(User user);
+        Task<User> Validate(string userId, string password);
     }
 }

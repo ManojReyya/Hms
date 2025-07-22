@@ -1,4 +1,5 @@
 using HealthCareManagementSystem.Application.DTOs.UserDTOs;
+using HealthCareManagementSystem.Domain.Entities;
 
 namespace HealthCareManagementSystem.Application.Services.UserServices
 {
@@ -10,5 +11,9 @@ namespace HealthCareManagementSystem.Application.Services.UserServices
         Task UpdateUserAsync(UserUpdateDTO dto);
         Task DeleteUserAsync(string userId);
         Task DeactivateUser(string userId);
+        
+        // Authentication methods
+        Task RegisterAsync(User user);
+        Task<UserResponseDTO?> LoginAsync(LoginDTO loginDto);
     }
 }

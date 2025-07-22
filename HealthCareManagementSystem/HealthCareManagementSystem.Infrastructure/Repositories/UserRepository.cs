@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using HealthCareManagementSystem.Domain.Entities;
 using HealthCareManagementSystem.Infrastructure.Contracts;
 using Microsoft.EntityFrameworkCore;
+using HealthCareManagementSystem.Infrastructure;
 
 namespace HealthCareManagementSystem.Infrastructure.Repositories
 {
@@ -48,6 +49,7 @@ namespace HealthCareManagementSystem.Infrastructure.Repositories
             var existingUser = await _dbContext.Users.FindAsync(userId);
             if (existingUser == null) return null!;
             existingUser.IsActive = false;
+            await _dbContext.SaveChangesAsync();
             return existingUser;
         }
 
@@ -59,6 +61,18 @@ namespace HealthCareManagementSystem.Infrastructure.Repositories
             _dbContext.Users.Remove(user);
             await _dbContext.SaveChangesAsync();
             return user;
+        }
+
+        // Authentication methods following JWT pattern
+        public async Task Register(User user)
+        {
+            _dbContext.Users.Add(user);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<User> Validate(string userId, string password)
+        {
+            return await _dbContext.Users.SingleOrDefaultAsync(u => u.UserId == userId && u.Password == password && u.IsActive);
         }
     }
 }
